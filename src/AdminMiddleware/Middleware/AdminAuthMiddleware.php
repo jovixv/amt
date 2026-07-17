@@ -25,8 +25,8 @@ class AdminAuthMiddleware
         if ($tokenFromCache === null || $tokenFromCache !== $requestToken){
             try{
                 $client = new Client();
-                $request = $client->request('POST', config('adminMiddleware.host').config('adminMiddleware.endpoint_url'));
-                $content = json_decode($request->getBody()->getContents());
+                $proxyResponse = $client->request('POST', config('adminMiddleware.host').config('adminMiddleware.endpoint_url'));
+                $content = json_decode($proxyResponse->getBody()->getContents());
                 $token = $content->token ?? null;
 
                 if ($token === $requestToken){
