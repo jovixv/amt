@@ -6,7 +6,6 @@
   "require": {
     "php": ">=7.1",
     "guzzlehttp/guzzle": "^7.4.0",
-    "symfony/var-dumper": "^5.3.8",
     "ext-json": "*",
     "ext-curl": "*"
   },
